@@ -1,6 +1,7 @@
 package com.usacheow.featurehello.presentation.fragment
 
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.WindowInsetsCompat
@@ -41,17 +42,6 @@ class AFragment : SimpleFragment() {
         }
 
         listView.updatePadding(bottom = insets.systemWindowInsetBottom + 56.toPx)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putFloat("progress", rootView.progress)
-    }
-
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        if (savedInstanceState != null)
-            rootView.progress = savedInstanceState.getFloat("progress", 0f)
     }
 
     override fun setupViews(savedInstanceState: Bundle?) {
