@@ -40,6 +40,7 @@ fun View.updateMargins(leftPx: Int? = null, topPx: Int? = null, rightPx: Int? = 
             bottomPx ?: bottomMargin
         )
     }
+    requestLayout()
 }
 
 fun View.doOnClick(listener: () -> Unit) {

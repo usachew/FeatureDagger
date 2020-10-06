@@ -37,6 +37,8 @@
     <color name="success">#24CF5F</color>
     <color name="disabled">#B3B3B3</color>
 
+    <color name="blue">#1976D2</color>
+
     <color name="white">#FFFFFF</color>
     <color name="white_90">#E6FFFFFF</color>
     <color name="white_80">#CCFFFFFF</color>

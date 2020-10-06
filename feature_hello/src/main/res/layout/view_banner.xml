@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.usacheow.featurehello.presentation.BannerItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="112dp"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:id="@+id/smallInfoClickableView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/left_right_padding"
+        android:background="?selectableItemBackground">
+
+        <TextView
+            android:id="@+id/smallInfoHeaderView"
+            style="@style/TextBody2_60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lines="1"
+            android:ellipsize="end"
+            tools:text="header" />
+
+        <TextView
+            android:id="@+id/smallInfoValueView"
+            style="@style/TextBody1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:lines="1"
+            android:ellipsize="end"
+            tools:text="value" />
+    </LinearLayout>
+</com.usacheow.featurehello.presentation.BannerItemView>

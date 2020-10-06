@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:layoutDescription="@xml/fragment_a_scene">
 
-    <include
-        android:id="@+id/header"
-        layout="@layout/simple_toolbar" />
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/backgroundView"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/toolbar_image_abstraction"
+        app:altSrc="@drawable/toolbar_image_abstraction_blur"/>
+
+    <Space
+        android:id="@+id/headerSpaceView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/headerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/leftIconView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="start"
+            app:tint="@color/white"
+            app:srcCompat="@drawable/ic_notifications"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rightIconView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="end"
+            app:tint="@color/white"
+            app:srcCompat="@drawable/ic_search"/>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/backgroundCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_bottom_dialog" />
+    
+    <FrameLayout
+        android:id="@+id/bannerListContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bannerListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            tools:listitem="@layout/view_banner"
+            tools:itemCount="2"/>
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        tools:itemCount="2"
+        tools:listitem="@layout/action_item_view" />
+</androidx.constraintlayout.motion.widget.MotionLayout>
